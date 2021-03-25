@@ -19,13 +19,16 @@ transform-style: preserve-3d;
 nav {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  min-height: 8vh;
+  min-height: 8vh; 
   font-family: "Poppins", sans-serif;
   background-color: #5d4954;
 }
 
 .logo {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	
   color: rgb(226, 226, 226);
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -35,19 +38,27 @@ nav {
 .nav-links {
   display: flex;
   justify-content: space-between;
-  width: 45%;
+  margin-bottom: 0;
+	width: 45%;
 }
 
 .nav-links li {
-  list-style: none;
+	display:flex;
+	align-items: center;
+	justify-content: space-around;
+	list-style: none;	
 }
 
 .nav-links a {
+  display:block;
+	
   color: rgb(226, 226, 226);
   text-decoration: none;
   letter-spacing: 2px;
   font-weight: bold;
   font-size: 14px;
+
+
 }
 
 @media screen and (max-width: 1024px) {

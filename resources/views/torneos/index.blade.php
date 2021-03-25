@@ -1,87 +1,46 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> {{--libreria jquery--}}
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css"> {{--libreria datatable--}}
-  
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script> {{--libreria datatable--}}
-<script src="https://kit.fontawesome.com/5f07a4626a.js" crossorigin="anonymous"></script>
+@extends('components.layout')
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> {{--libreria bootstrap--}}
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> {{--libreria sweetalert (alerta de borrado)--}}
+@section('title')
+	torneos
+@endsection
 
-<script> {{--pone a funcionar el datatable--}}
-
-$(document).ready( function () {
-    $('#containerTable').DataTable({
-    language: {
-        "decimal": "",
-        "emptyTable": "No hay información",
-        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-        "infoPostFix": "",
-        "thousands": ",",
-        "lengthMenu": "Mostrar _MENU_ Entradas",
-        "loadingRecords": "Cargando...",
-        "processing": "Procesando...",
-        "search": "<i class='fas fa-search'></i>",
-        "zeroRecords": "Sin resultados encontrados",
-        "paginate": {
-            "first": "Primero",
-            "last": "Ultimo",
-            "next": "<i class='fas fa-arrow-right'></i>",
-            "previous": "<i class='fas fa-arrow-left'></i>"
-        }},
-    
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> {{--libreria jquery--}}
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.24/r-2.2.7/datatables.min.css"/> 
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/r-2.2.7/datatables.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> {{--libreria bootstrap--}}
+	<script src="https://kit.fontawesome.com/5f07a4626a.js" crossorigin="anonymous"></script>	
+    <script src="https://kit.fontawesome.com/5f07a4626a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> {{--libreria sweetalert (alerta de borrado)--}}
+	<script> {{--pone a funcionar el datatable--}}
+		$(document).ready( function () {
+    		$('#containerTable').DataTable({
+    			language: {
+        			"decimal": "",
+        			"emptyTable": "No hay información",
+        			"info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        			"infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        			"infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        			"infoPostFix": "",
+        			"thousands": ",",
+        			"lengthMenu": "Mostrar _MENU_ Entradas",
+        			"loadingRecords": "Cargando...",
+        			"processing": "Procesando...",
+        			"search": "<i class='fas fa-search'></i>",
+        			"zeroRecords": "Sin resultados encontrados",
+        			"paginate": {
+            		"first": "Primero",
+            		"last": "Ultimo",
+            		"next": "<i class='fas fa-arrow-right'></i>",
+            		"previous": "<i class='fas fa-arrow-left'></i>"
+        }},    
     "responsive": true,
 });	
-} );
+			$('#nav-torneos').css('background-color','rgb(226, 226, 226)');
+			$('#nav-torneos a').css('color','#5d4954');
+});
 </script>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-		 <li class="nav-item">
-        <a class="nav-link" href="{{ route('chess') }}">Home</a>
-      </li>	
-	  <li class="nav-item">
-        <a class="nav-link" href="{{ route('torneos.index') }}">Torneos</a>
-      </li>		
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('jugadores.index') }}">Jugadores</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('partidas.index') }}">Partidas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('clubes.index') }}">Clubes</a>
-      </li>
-		<li class="nav-item">
-        <a class="nav-link" href="{{ route('arbitros.index') }}">Árbitros</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<style>
-.navbar{
-    width: 85%;
-	margin: 0 auto;
-}
-</style>
-
-<script>
- $(document).ready(function () {    
-   
-    var CurrentUrl = window.location.origin+window.location.pathname;
-    
-    $('.navbar a').each(function(Key,Value)
-        {
-            if(Value['href'] === CurrentUrl)
-            {
-                $(Value).parent().addClass('active');
-            }
-        });
- });
-</script>
+	
+@section("content")
 
 <style>
 .container-fluid {
@@ -142,6 +101,6 @@ $(document).ready( function () {
         </tr>
     @endforeach
     </tbody>
-    </table>
-        
+    </table>        
 </div>
+@endsection

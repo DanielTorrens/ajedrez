@@ -7,6 +7,10 @@ use App\Models\club;
 
 class clubController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     public function index()
     {
@@ -47,7 +51,7 @@ class clubController extends Controller
     public function edit($id)
     {
            $club = club::findOrFail($id);
-           return view('clubes.edit', compact("club"));   
+           return view('clubes.edit')->withClub(club::findOrFail($id));   
     }
 
     

@@ -10,7 +10,10 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> {{--libreria bootstrap--}}
 	<script src="https://kit.fontawesome.com/5f07a4626a.js" crossorigin="anonymous"></script>	
     <script src="https://kit.fontawesome.com/5f07a4626a.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> {{--libreria sweetalert (alerta de borrado)--}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> {{--  libreria sweetalert (alerta de borrado)--}}
+
+
+
 	<script> {{--pone a funcionar el datatable--}}
 		$(document).ready( function () {
     		$('#containerTable').DataTable({
@@ -78,6 +81,7 @@
             <td>
 
                 {{ $club->nombre_club  }}
+			
             </td>
             <td>
                 {{ $club->pais_club }}
@@ -90,7 +94,7 @@
             </td>
             
             <td>                
-                <a href="{{ route('clubes.edit' , $club->id) }}" class="btn btn-info"> <i class="far fa-edit"></i> </a>
+                <a href="{{ route('clubes.edit' , [$club->id, $club->slug]) }}" class="btn btn-info"> <i class="far fa-edit"></i> </a>
                <form class="formDelete" action="{{ route('clubes.destroy', $club->id) }}"
                     data-action="{{ route('clubes.destroy',  $club->id) }}" method="POST">
                     @method('DELETE')

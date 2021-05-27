@@ -19,7 +19,7 @@
 			
 			<fieldset>
 				<legend>
-					Editando torneos
+					Editando partidas
 				</legend>
 
         @csrf
@@ -47,7 +47,7 @@
 			
 		<div class="form-group">
             <label for="archivo">Nombre del torneo</label>
-            <select class="form-control" name="torneo_id" id="torneo_id">
+            <select class="form-control custom-select" name="torneo_id" id="torneo_id">
 					@foreach ($torneos as $name=>$id)
 					<option {{ $partida->torneo_id==$id ? 'selected="selected"' : ""}} value="{{$id}}">
 						{{$name}}
@@ -57,8 +57,8 @@
         </div>
 			
 		<div class="form-group">
-            <label for="archivo">Nombre del รกrbitro</label>
-            <select class="form-control" name="arbitro_id" id="arbitro_id">
+            <label for="archivo">Nombre del árbitro</label>
+            <select class="form-control custom-select" name="arbitro_id" id="arbitro_id">
 					@foreach ($arbitros as $name=>$id)
 					<option {{ $partida->arbitro_id==$id ? 'selected="selected"' : ""}} value="{{$id}}">
 						{{$name}}
@@ -76,7 +76,7 @@
 <style>
 		
     fieldset{
-    	border: 1px groove #ddd !important;
+    	border: 8px groove #ddd !important;
     	padding: 0 1.4em 1.4em 1.4em !important;
     	margin: 0 0 1.5em 0 !important;
     	-webkit-box-shadow:  0px 0px 0px 0px #000;

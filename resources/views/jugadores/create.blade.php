@@ -18,49 +18,65 @@
 			
 			<fieldset>
 				<legend>
-					Creación de jugadores
+					Creando jugadores
 				</legend>
 
             @csrf
 
        <div class="form-group">
-            <label for="titulo">Nombre del jugador</label>
-            <input class="form-control" type="text" name="nombre_jugador" id="nombre_jugador" placeholder="nombre_jugador" value=""> 
+            <label class="custom-field one">
+            <input class="form-control" type="text" name="nombre_jugador" id="nombre_jugador" required> 
+				<span  class="placeholder">Nombre del jugador</span>
+	  </label>
         </div>
 
         <div class="form-group">
-                <label for="archivo">Apellidos del jugador</label>
-                <input class="form-control" type="text" name="apellidos_jugador" id="apellidos_jugador" placeholder="apellidos_jugador" value="">
+               <label class="custom-field one">
+                <input class="form-control" type="text" name="apellidos_jugador" id="apellidos_jugador" required>
+				   <span  class="placeholder">Apellidos del jugador</span>
+	  </label>
         </div>
 
         <div class="form-group">
-            <label for="titulo">ELO</label>
-            <input class="form-control" type="text" name="ELO" id="ELO" placeholder="ELO" value=""> 
+             <label class="custom-field one">
+            <input class="form-control" type="text" name="ELO" id="ELO" required> 
+			<span  class="placeholder">ELO</span>
+	  </label>
         </div>
 
         <div class="form-group">
-                <label for="archivo">Título del jugador</label>
-                <input class="form-control" type="text" name="titulo_jugador" id="titulo_jugador" placeholder="titulo_jugador" value="">
+                <label class="custom-field one">
+                <input class="form-control" type="text" name="titulo_jugador" id="titulo_jugador" required>
+					<span  class="placeholder">Título del jugador</span>
+	  </label>
         </div>
 			
 		<div class="form-group">
-                <label for="archivo">fecha_titulo</label>
-                <input class="form-control" type="date" name="fecha_titulo" id="fecha_titulo" placeholder="fecha_titulo" value="">
+                 <label class="custom-field one">
+                <input class="form-control" type="date" name="fecha_titulo" id="fecha_titulo" required>
+			<span  class="placeholder">Fecha del título</span>
+	  </label>
         </div>
 
         <div class="form-group">
-            <label for="titulo">Nacionalidad del jugador</label>
-            <input class="form-control" type="text" name="nacionalidad_jugador" id="nacionalidad_jugador" placeholder="nacionalidad_jugador" value=""> 
+            <label class="custom-field one">
+            <input class="form-control" type="text" name="nacionalidad_jugador" id="nacionalidad_jugador" required>
+				<span  class="placeholder">Nacionalidad del jugador</span>
+	  </label>
         </div>
 
         <div class="form-group">
-                <label for="archivo">Email del jugador</label>
-                <input class="form-control" type="text" name="email_jugador" id="email_jugador" placeholder="email_jugador" value="">
+                <label class="custom-field one">
+                <input class="form-control" type="email" name="email_jugador" id="email_jugador" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+					<span  class="placeholder">Email del jugador</span>
+	  </label>
         </div>   
 			
 		<div class="form-group">
-                <label for="archivo">Teléfono del jugador</label>
-                <input class="form-control" type="text" name="telefono_jugador" id="telefono_jugador" placeholder="telefono_jugador" value="">
+                <label class="custom-field one">
+                <input class="form-control" type="tel" name="telefono_jugador" id="telefono_jugador" pattern="[0-9]{9}" required>
+					<span  class="placeholder">Teléfono del jugador</span>
+	  </label>
         </div>
 			
 		<div class="form-group">
@@ -83,7 +99,7 @@
 <style>
 		
     fieldset{
-    	border: 1px groove #ddd !important;
+    	border: 8px groove #ddd !important;
     	padding: 0 1.4em 1.4em 1.4em !important;
     	margin: 0 0 1.5em 0 !important;
     	-webkit-box-shadow:  0px 0px 0px 0px #000;
@@ -122,4 +138,95 @@
   text-decoration: underline;
 }
 	
+		
+	body {
+  width: 100vw;
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.custom-field {
+  position: relative;
+  font-size: 14px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+.custom-field input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  padding: 12px;
+  border-radius: 3px;
+  width: 250px;
+  outline: none;
+  font-size: 14px;
+}
+
+.custom-field .placeholder {
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: #aaa;
+  transition: 
+    top 0.3s ease,
+    color 0.3s ease,
+    font-size 0.3s ease;
+}
+
+.custom-field input.dirty + .placeholder,
+.custom-field input:valid + .placeholder,
+.custom-field input:focus + .placeholder {
+  top: 10px;
+  font-size: 10px;
+  color: #222;
+}
+	
+	.custom-field.one input {
+  background: none;
+  border: 2px solid #ddd;
+  transition: border-color 0.3s ease;
+}
+
+.custom-field.one input + .placeholder {
+  left: 8px;
+  padding: 0 5px;
+}
+
+.custom-field.one input.dirty,
+.custom-field.one input:valid,
+.custom-field.one input:focus {
+  border-color: #222;
+  transition-delay: 0.1s
+}
+
+.custom-field.one input.dirty + .placeholder,
+.custom-field.one input:valid + .placeholder,
+.custom-field.one input:focus + .placeholder {
+  top: 20px;
+  font-size: 10px;
+  color: #222;
+  background: #fff;
+}
+	
+		#fecha_titulo {
+		 color: transparent;
+	}
+	
+	#fecha_titulo:valid {
+		 color: black;
+	}
 </style>

@@ -64,15 +64,16 @@
                 <input class="form-control" type="text" name="telefono_jugador" id="telefono_jugador" placeholder="telefono_jugador" value="{{ $jugador->telefono_jugador }}">
         </div>
 			
-		<div class="form-group">
-            <label for="archivo">Club</label>
-            <select class="form-control" name="club_id" id="club_id">
+		<label for="archivo">Club</label>
+		<div class="form-group custom">            
+            <select class="form-control custom-select" name="club_id" id="club_id">
 					@foreach ($clubs as $name=>$id)
 					<option {{ $jugador->club_id==$id ? 'selected="selected"' : ""}} value="{{$id}}">
 						{{$name}}
 					</option>
 				    @endforeach
-			</select>
+			</select>	
+			<span class="custom-arrow"></span>
         </div>  
           
         <input type="submit" value="&#xf1d8" class="btn btn-primary fas fa-paper-plane">
@@ -84,7 +85,7 @@
 <style>
 		
     fieldset{
-    	border: 1px groove #ddd !important;
+    	border: 8px groove #ddd !important;
     	padding: 0 1.4em 1.4em 1.4em !important;
     	margin: 0 0 1.5em 0 !important;
     	-webkit-box-shadow:  0px 0px 0px 0px #000;
@@ -122,5 +123,54 @@
   color: #01447e;
   text-decoration: underline;
 }
+	/*
+	select {
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+		font-size: 1.5rem;
+		padding: 1em 4em 1em 1.5em;
+		background: #4d5061;
+		color: white;
+		border: 0;
+	}
+	
+	.custom {
+		position: relative;
+	}
+	
+	.custom-arrow {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: block;
+		background: #3b3c47;
+		height: 100%;
+		width: 4rem;
+		pointer-events: none;
+	}
+	
+	.custom-arrow::before,
+	.custom-arrow::after {
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 0;
+		
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	.custom-arrow::before {
+		border-left: 0.65em solid transparent;
+		border-right: 0.65em solid transparent;
+		border-bottom: 0.65em solid rgba(255, 255, 255, 0.5);
+		top: 30%;
+	}
+	
+	.custom-arrow::after {
+		border-left: 0.65em solid transparent;
+		border-right: 0.65em solid transparent;
+		border-top: 0.65em solid rgba(255, 255, 255, 0.5);
+		top: 65%;
+	} */
 	
 </style>

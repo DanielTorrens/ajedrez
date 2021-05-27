@@ -67,7 +67,7 @@
 		<th scope="col">Fecha partida</th>
         <th scope="col">Estado de la partida</th>
 		<th scope="col">Nombre del torneo</th>
-        <th scope="col">Nombre del รกrbitro</th>
+        <th scope="col">Nombre del árbitro</th>
         <th scope="col">Acciones</th>
         </tr>
     </thead>

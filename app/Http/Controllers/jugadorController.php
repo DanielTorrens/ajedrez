@@ -8,12 +8,16 @@ use App\Models\club;
 
 class jugadorController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('auth');
+    }
   
     public function index()
-    {
-          $jugadores=jugador::all();
-		
-		return view("jugadores.index",compact("jugadores"));
+	{        	
+		$jugadores = jugador::with('club')->get();
+
+		return view('jugadores.index')->with('jugadores', $jugadores);
     }
   
     public function create()

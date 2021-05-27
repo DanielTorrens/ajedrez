@@ -9,12 +9,16 @@ use App\Models\arbitro;
 
 class partidaController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     public function index()
-    {
-          $partidas=partida::all();
-		
-		return view("partidas.index",compact("partidas"));
+    {		
+		$partidas = partida::with('torneo', 'arbitro')->get();
+
+		return view('partidas.index')->with('partidas', $partidas);
     }
 
   

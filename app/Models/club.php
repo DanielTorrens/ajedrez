@@ -10,7 +10,12 @@ class club extends Model
     protected $table="clubes";
     protected $primaryKey="id";
     public $timestamps = false;
-    protected $fillable=["nombre_club","pais_club", "email_club", "telefono_club"];
+    protected $fillable=["nombre_club", "slug","pais_club", "email_club", "telefono_club"];
+	
+/*	 public function getRouteKeyName()
+    {
+        return "slug";
+    } */
 	
 	 public function jugadores()
     {

@@ -9,13 +9,22 @@ use App\Http\Controllers\arbitroController;
 use App\Http\Controllers\jugadorController;
 use App\Http\Controllers\partidaController;
 
-Route::get('/', function () {
-	return view('chess');
-})->name('chess');
+URL::forceScheme('https');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/', function () {
+	return view('/auth/login');
+})->name('inicio-login'); 
+
+Auth::routes();
+
+ Route::get('/chess', function () {
+	return view('chess');
+})->name('chess'); 
 
 Route::resource("/torneos", torneoController::class);
 Route::resource("/clubes", clubController::class);
@@ -24,4 +33,5 @@ Route::resource("/arbitros", arbitroController::class);
 Route::resource("/jugadores", jugadorController::class);
 Route::resource("/partidas", partidaController::class);
 
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

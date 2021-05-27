@@ -10,14 +10,14 @@
 <div class="container-fluid" style="width:85%">
 	
 			<ul class="breadcrumb">
-  		<li><a href="{{ route('clubes.index') }}">Árbitros</a></li>
+  		<li><a href="{{ route('clubes.index') }}">Clubes</a></li>
   		<li><a href="{{ route('clubes.edit', $club->id) }}">Editar</a></li>
 		<li> {{ $club->nombre_club  }} </li>
 	</ul>
 
         <form action="{{ route('clubes.update',$club->id) }}" method="POST">
 			
-				<fieldset>
+			<fieldset>
 				<legend>
 					 Editando clubes
 				</legend>
@@ -54,7 +54,7 @@
 <style>
 		
     fieldset{
-    	border: 1px groove #ddd !important;
+    	border: 8px groove #ddd !important;
     	padding: 0 1.4em 1.4em 1.4em !important;
     	margin: 0 0 1.5em 0 !important;
     	-webkit-box-shadow:  0px 0px 0px 0px #000;

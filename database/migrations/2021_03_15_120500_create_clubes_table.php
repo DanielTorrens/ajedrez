@@ -12,6 +12,7 @@ class CreateClubesTable extends Migration
         Schema::create('clubes', function (Blueprint $table) {
             $table->id();
 			$table->string('nombre_club')->nullable();
+			// $table->string('slug');
             $table->string('pais_club')->nullable();
 			$table->string('email_club')->nullable();
 			$table->string('telefono_club')->nullable();

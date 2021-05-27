@@ -15,12 +15,13 @@ class jugador extends Model
     protected $fillable=["nombre_jugador","apellidos_jugador","ELO","titulo_jugador","fecha_titulo","nacionalidad_jugador","email_jugador","telefono_jugador","club_id"];
 	
 	public function club()
-    {
+    {		  
         return $this->belongsTo(club::class);
     }
 	
 	 public function partida()
     {
         return $this->belongsToMany(partida::class, "jugador_partida");
+		 jugador::with('club');
     }
 }

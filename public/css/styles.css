@@ -39,7 +39,7 @@ nav {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0;
-	width: 45%;
+  width: 45%;
 }
 
 .nav-links li {
@@ -47,6 +47,7 @@ nav {
 	align-items: center;
 	justify-content: space-around;
 	list-style: none;	
+	padding: 7px;
 }
 
 .nav-links a {

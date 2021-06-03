@@ -65,10 +65,10 @@
     <thead>
         <tr>
         <th scope="col">Id</th>
-        <th scope="col">Nombre del club</th>
-        <th scope="col">País de origen del club</th>
-        <th scope="col">Email del club</th>
-		<th scope="col">Teléfono del club</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">País</th>
+        <th scope="col">Email</th>
+		<th scope="col">Teléfono</th>
         <th scope="col">Acciones</th>
         </tr>
     </thead>

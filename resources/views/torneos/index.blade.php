@@ -55,15 +55,15 @@
         </div>
     @endif
     <a class="btn btn-success mt-3 mb-3" href="{{ route('torneos.create') }}">
-        <i class="far fa-plus-square"></i>
+        <i class="far fa-plus-square"> Crear</i>
     </a>
 
     <table id="containerTable" class="table table-hover">
     <thead>
         <tr>
         <th scope="col">Id</th>
-        <th scope="col">Nombre del torneo</th>
-        <th scope="col">Año del torneo</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Año</th>
         <th scope="col">f_inico</th>
         <th scope="col">f_final</th>
         <th scope="col">Acciones</th>
@@ -86,6 +86,7 @@
             </td>  
 			<td>
                 {{ Carbon\Carbon::parse($torneo->f_final)->format("d-m-Y")  }}
+				{{-- Carbon\Carbon::parse($torneo->f_final)->addDays(3, "day") --}}
             </td>  
             
             <td>    

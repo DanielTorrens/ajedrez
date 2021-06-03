@@ -17,6 +17,7 @@ class partidaController extends Controller
     public function index()
     {		
 		$partidas = partida::with('torneo', 'arbitro')->get();
+		// $partidas = partida::with('jugador_partida')->get();
 
 		return view('partidas.index')->with('partidas', $partidas);
     }

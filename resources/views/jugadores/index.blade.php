@@ -62,15 +62,15 @@
     <thead>
         <tr>
         <th scope="col">Id</th>
-        <th scope="col">Nombre del jugador</th>
-        <th scope="col">Apellidos del jugador</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellidos</th>
         <th scope="col">ELO</th>
-        <th scope="col">Título del jugador</th>
+        <th scope="col">Título</th>
 		<th scope="col">Fecha_título</th>
-        <th scope="col">Nacionalidad del jugador</th>
-        <th scope="col">Email del jugador</th>
-		<th scope="col">Teléfono del jugador</th>
-		<th scope="col">Club del jugador</th>
+        <th scope="col">Nacionalidad</th>
+        <th scope="col">Email</th>
+		<th scope="col">Teléfono</th>
+		<th scope="col">Club</th>
 		<th scope="col">Acciones</th>
         </tr>
     </thead>

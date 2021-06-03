@@ -30,6 +30,7 @@
 			<li id="nav-torneos"><a href="{{ route('torneos.index') }}">Torneos <i class="fas fa-trophy"></i></a></li>
             <li id="nav-clubes"><a href="{{ route('clubes.index') }}">Clubes <i class="fas fa-chess-queen"></i></a></li>
             <li id="nav-arbitros"><a href="{{ route('arbitros.index') }}">Árbitros <i class="fas fa-gavel"></i></a></li>
+			<li id="nav-resultados"><a href="{{ route('jugador_partida.index') }}">Resultados</a></li>
 			<li class=""><a href="{{ route('logout') }}">Log Out</a></li>
         </ul>
 	  <div class="burger">

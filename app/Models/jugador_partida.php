@@ -7,10 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class jugador_partida extends Model
 {
+	protected $table="jugador_partida";
     //protected $primaryKey=['jugador_id", "partida_id'];
 	protected $primaryKey="id";	
 	protected $foreignKey=["jugador_id", "partida_id"];
     public $timestamps = false;
     protected $fillable=["color", "resultado"];
+	
+	public function jugador()
+    {
+        return $this->belongsTo(jugador::class, "jugador_id");
+    }
+	
+	public function partida()
+    {
+        return $this->belongsTo(partida::class, "partida_id");
+    }
 	
 }

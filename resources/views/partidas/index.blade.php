@@ -64,10 +64,10 @@
         <th scope="col">Id</th>
         <th scope="col">hora_inicio</th>
         <th scope="col">hora_final</th>
-		<th scope="col">Fecha partida</th>
-        <th scope="col">Estado de la partida</th>
-		<th scope="col">Nombre del torneo</th>
-        <th scope="col">Nombre del árbitro</th>
+		<th scope="col">Fecha</th>
+        <th scope="col">Estado</th>
+		<th scope="col">Torneo</th>
+        <th scope="col">Árbitro</th>
         <th scope="col">Acciones</th>
         </tr>
     </thead>

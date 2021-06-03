@@ -23,6 +23,7 @@ class partida extends Model
 		public function torneo()
     {
         return $this->belongsTo(torneo::class);
+	   // partida::with('torneo');
     }
 	
 		public function arbitro()
@@ -38,5 +39,6 @@ class partida extends Model
 	public function jugador()
     {
         return $this->belongsToMany(jugador::class, "jugador_partida");
+		
     }
 }
